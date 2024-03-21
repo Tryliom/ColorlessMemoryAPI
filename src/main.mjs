@@ -19,7 +19,7 @@ class Server {
 
         app.use(cors());
 
-        const sequelize = new Sequelize(`postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@127.0.0.1:5432/${process.env.POSTGRES_DB}`);
+        const sequelize = new Sequelize(`postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.DB_IP}:5432/${process.env.POSTGRES_DB}`);
 
         Player.InitModel(sequelize);
         Game.InitModel(sequelize);
