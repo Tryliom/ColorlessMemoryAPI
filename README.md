@@ -1,5 +1,11 @@
 # API
 
+# Run on server
+
+```bash
+pm2 start npm --name "Colorless Memory API" -- start
+```
+
 ## Routes
 
 ### GET /player/:name
