@@ -35,6 +35,9 @@ class Server {
         console.log('API server started on: ' + port);
 
         // Routes
+        app.route("/ping")
+            .get((req, res) => { res.status(200).json({message: "pong"}); });
+
         app.route("/player/:name")
             .get(PlayerRoute.getInfo)
     }
