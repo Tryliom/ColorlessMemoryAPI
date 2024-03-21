@@ -1,25 +1,5 @@
 # API
 
-# Run on server
-
-```bash
-sudo docker compose up -d
-pm2 start npm --name "Colorless Memory API" -- start
-```
-
-## Monitor
-
-```bash
-pm2 monit
-```
-
-## Shutdown
-
-```bash
-pm2 stop 0
-sudo docker compose down
-```
-
 ## Routes
 
 ### GET /player/:name

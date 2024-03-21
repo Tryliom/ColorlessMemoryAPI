@@ -1,4 +1,3 @@
-import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -11,8 +10,6 @@ import {Game} from './Model/DB/Game.mjs';
 
 class Server {
     static async Start() {
-        dotenv.config();
-
         const app = express();
         const port = process.env.PORT || 3000;
         const ip = process.env.IP || "127.0.0.1";

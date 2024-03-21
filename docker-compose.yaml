@@ -29,6 +29,6 @@ services:
         condition: service_healthy
     volumes:
       - .:/app
-    command: npm run start
+    command: npm --env-file=.env run start
 volumes:
     db-data:
