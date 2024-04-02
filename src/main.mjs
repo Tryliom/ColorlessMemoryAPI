@@ -7,6 +7,7 @@ import {PlayerRoute} from "./Model/Routes/PlayerRoute.mjs";
 import {Sequelize} from 'sequelize';
 import {Player} from './Model/DB/Player.mjs';
 import {Game} from './Model/DB/Game.mjs';
+import {GameRoute} from "./Model/Routes/GameRoute.mjs";
 
 class Server {
     static async Start() {
@@ -32,11 +33,17 @@ class Server {
         console.log('API server started on: ' + port);
 
         // Routes
-        app.route("/ping")
-            .get((req, res) => { res.status(200).json({message: "pong"}); });
-
         app.route("/player/:name")
-            .get(PlayerRoute.getInfo)
+            .get(PlayerRoute.getInfo);
+
+        app.route("/player/:name/games")
+            .get(GameRoute.getGamesOfPlayer);
+
+        app.route("/leaderboard")
+            .get(PlayerRoute.getLeaderboard);
+
+        app.route("/game")
+            .post(GameRoute.createGame);
     }
 }
 

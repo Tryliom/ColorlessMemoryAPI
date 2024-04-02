@@ -4,32 +4,7 @@
 
 ### GET /player/:name
 
-Success:
-
-```json
-{
-  "name": "player name",
-  "elo": 100
-}
-```
-
-Error:
-
-```json
-{
-  "error": "player not found"
-}
-```
-
-### POST /player
-
-Data:
-
-```json
-{
-  "name": "player name"
-}
-```
+If not found, it's created with 100 elo.
 
 Success:
 
@@ -40,15 +15,9 @@ Success:
 }
 ```
 
-Error:
+### GET /player/:name/games
 
-```json
-{
-  "error": "player already exists"
-}
-```
-
-### GET /match/:name
+If not found, it's created with 100 elo and no matches.
 
 Success:
 
@@ -71,15 +40,9 @@ Success:
 ]
 ```
 
-Error:
+### POST /game
 
-```json
-{
-  "error": "player not found"
-}
-```
-
-### POST /match
+If a player is not found, it's created with 100 elo.
 
 Data:
 
@@ -94,17 +57,10 @@ Data:
 ```
 
 Success: 200 ok
-Error:
-
-```json
-{
-  "error": "player not found"
-}
-```
 
 ### GET /leaderboard
 
-Success:
+Result:
 
 ```json
 [
@@ -117,12 +73,4 @@ Success:
     "elo": 70
   }
 ]
-```
-
-Error:
-
-```json
-{
-  "error": "leaderboard not found"
-}
 ```
